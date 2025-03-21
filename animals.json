@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "name": "Lion",
+      "color": "yellow",
+      "species": "Panthera leo"
+    },
+    {
+      "id": "2",
+      "name": "Tiger",
+      "color": "orange",
+      "species": "Panthera tigris"
+    },
+    {
+      "id": "3",
+      "name": "Parrot",
+      "color": "green",
+      "species": "Psittaciformes"
+    },
+    {
+      "id": "4",
+      "name": "Goldfish",
+      "color": "red",
+      "species": "Carassius auratus"
+    }
+  ]
+  
