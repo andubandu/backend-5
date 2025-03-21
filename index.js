@@ -58,6 +58,35 @@ app.delete('/blogs/:id', async (req, res) => {
     res.json({ message: 'Blog deleted' });
 });
 
+app.put('/blogs/:id', async (req, res) => {
+    let data = await loadData('blogs.json');
+    const index = data.findIndex(blog => blog.id === req.params.id);
+
+    if (index === -1) {
+        return res.status(404).json({ message: 'Blog not found' });
+    }
+
+    data[index] = { ...data[index], ...req.body };
+    await saveData('blogs.json', data);
+
+    res.json(data[index]);
+});
+
+app.put('/animals/:id', async (req, res) => {
+    let data = await loadData('animals.json');
+    const index = data.findIndex(animal => animal.id === req.params.id);
+
+    if (index === -1) {
+        return res.status(404).json({ message: 'Animal not found' });
+    }
+
+    data[index] = { ...data[index], ...req.body }; 
+    await saveData('animals.json', data);
+
+    res.json(data[index]);
+});
+
+
 app.listen(3000, () => {
     console.log(`Server running on http://localhost:3000`);
 });
